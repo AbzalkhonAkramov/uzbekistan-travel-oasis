@@ -1,13 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from 'react';
+import HeroSection from '@/components/home/HeroSection';
+import FeaturedDestinations from '@/components/home/FeaturedDestinations';
+import AboutPreview from '@/components/home/AboutPreview';
+import PopularTours from '@/components/home/PopularTours';
+import Testimonials from '@/components/home/Testimonials';
+import ContactCta from '@/components/home/ContactCta';
+import { Helmet } from 'react-helmet-async';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <>
+      <Helmet>
+        <title>UzTravel - Discover Uzbekistan | O'zbekistonda sayohatlar va tur paketlar</title>
+        <meta name="description" content="Explore the beauty of Uzbekistan with our guided tours to Samarkand, Bukhara, Khiva, and Tashkent. Book your unforgettable journey with UzTravel, the leading travel agency in Tashkent." />
+        <meta name="keywords" content="tur agentligi O'zbekiston, O'zbekistonda tur paketlar, Toshkent tur agentligi, O'zbekiston sayohatlari, arzon tur paketlar O'zbekiston" />
+      </Helmet>
+      
+      <main>
+        <HeroSection />
+        <FeaturedDestinations />
+        <PopularTours />
+        <AboutPreview />
+        <Testimonials />
+        <ContactCta />
+      </main>
+    </>
   );
 };
 
