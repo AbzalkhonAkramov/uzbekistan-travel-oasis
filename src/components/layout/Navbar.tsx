@@ -84,7 +84,7 @@ const Navbar = () => {
                 {item.name}
               </NavLink>
             ))}
-            <div className="pt-4 pb-2 flex justify-center">
+            <div className="pt-4 pb-2 flex justify-start">
               <LanguageSwitcher />
             </div>
             <Button variant="default" className="mt-2 bg-uznavy hover:bg-uznavy/90 w-full">
