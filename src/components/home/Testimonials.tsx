@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Star } from 'lucide-react';
-import { Card, CardContent } from "@/components/ui/card";
 
 interface Testimonial {
   id: number;
@@ -19,7 +18,7 @@ const testimonials: Testimonial[] = [
     name: "Sarah Johnson",
     country: "United Kingdom",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
-    text: "Our experience with UzTravel was exceptional from start to finish. The guides were knowledgeable, accommodations were comfortable, and the itinerary perfectly balanced historic sites with cultural experiences.",
+    text: "The peacefulness of the countryside and the hospitality of people in every city we visited was truly remarkable. UzTravel made our journey through Uzbekistan unforgettable.",
     rating: 5,
     tourName: "Silk Road Highlights"
   },
@@ -28,7 +27,7 @@ const testimonials: Testimonial[] = [
     name: "David Chen",
     country: "Singapore",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
-    text: "Exploring Samarkand with UzTravel was a dream come true. The attention to detail and the insider knowledge of our guide made this trip unforgettable. I highly recommend their services.",
+    text: "The serene beauty of Samarkand at sunrise is something I'll never forget. Our guide showed us quiet spots away from crowds where we could truly appreciate the history.",
     rating: 5,
     tourName: "Samarkand Weekend"
   },
@@ -37,7 +36,7 @@ const testimonials: Testimonial[] = [
     name: "Marie Dubois",
     country: "France",
     image: "https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
-    text: "The hospitality of Uzbek people combined with UzTravel's professional service made our trip outstanding. The traditional meals arranged for us were delicious, and the historical sites were breathtaking.",
+    text: "The tranquility of the desert landscapes and the peaceful atmosphere of the historic sites created a perfect balance of adventure and relaxation.",
     rating: 4,
     tourName: "Bukhara Heritage Tour"
   }
@@ -55,44 +54,38 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-uznavy text-white relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full opacity-5">
-        <div className="uz-pattern-border h-full"></div>
-      </div>
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-uzvanilla">
-            What Our Guests Say
+    <section className="py-24 md:py-32 bg-white">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
+            <span className="uz-title-decoration">Guest Experiences</span>
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Read about the experiences of travelers who have explored Uzbekistan with us.
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Stories from travelers who discovered the tranquil beauty of Uzbekistan with us.
           </p>
         </div>
         
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (
-            <Card key={testimonial.id} className="bg-white text-gray-800 overflow-visible">
-              <CardContent className="p-6 relative">
-                <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-full overflow-hidden border-4 border-uznavy">
+            <div key={testimonial.id} className="bg-gray-50 p-8 rounded-lg">
+              <div className="flex justify-center mb-6">
+                {renderStars(testimonial.rating)}
+              </div>
+              <p className="text-gray-700 mb-8 text-center">"{testimonial.text}"</p>
+              <div className="flex items-center">
+                <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="mt-12 text-center">
-                  <div className="flex justify-center mb-2">
-                    {renderStars(testimonial.rating)}
-                  </div>
-                  <p className="italic text-gray-700 mb-4">"{testimonial.text}"</p>
-                  <div className="font-bold text-uznavy">{testimonial.name}</div>
-                  <div className="text-gray-600 text-sm">{testimonial.country}</div>
-                  <div className="mt-2 inline-block bg-uzvanilla/30 text-uznavy px-3 py-1 rounded-full text-xs">
-                    {testimonial.tourName}
-                  </div>
+                <div>
+                  <div className="font-medium text-uznavy">{testimonial.name}</div>
+                  <div className="text-gray-500 text-sm">{testimonial.country}</div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
       </div>

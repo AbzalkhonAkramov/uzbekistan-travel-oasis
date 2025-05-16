@@ -15,9 +15,9 @@ const Layout = ({ children }: LayoutProps) => {
         <html lang="en" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#002147" />
+        <meta name="theme-color" content="#FFFFFF" />
       </Helmet>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen bg-white">
         <Navbar />
         <main className="flex-grow mt-16">
           {children}

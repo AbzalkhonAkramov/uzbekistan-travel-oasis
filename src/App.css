@@ -1,42 +1,14 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+
+.uz-title-decoration {
+  @apply relative inline-block;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.uz-title-decoration::after {
+  content: "";
+  @apply absolute -bottom-2 left-0 w-16 h-0.5 bg-uzvanilla rounded-full;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.uz-pattern-border {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 25C59.7 25 68 33.3 68 42.9C77.7 42.9 86 51.2 86 60.9C86 70.6 77.7 78.9 68 78.9C68 88.6 59.7 96.9 50 96.9C40.3 96.9 32 88.6 32 78.9C22.3 78.9 14 70.6 14 60.9C14 51.2 22.3 42.9 32 42.9C32 33.3 40.3 25 50 25Z' stroke='%23002147' fill='none' stroke-width='0.5' opacity='0.2' /%3E%3C/svg%3E");
+  @apply bg-repeat-x border-t border-b border-uznavy/10;
 }

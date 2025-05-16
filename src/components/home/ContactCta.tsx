@@ -6,21 +6,17 @@ import { Button } from "@/components/ui/button";
 
 const ContactCta = () => {
   return (
-    <section className="py-16 md:py-24 bg-uzvanilla/20">
-      <div className="container mx-auto px-4">
-        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-1/3 h-full opacity-10 hidden md:block">
-            <div className="uz-pattern-border h-full w-full"></div>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+    <section className="py-24 md:py-32 bg-white">
+      <div className="container mx-auto px-6">
+        <div className="max-w-5xl mx-auto bg-gray-50 rounded-2xl p-12 md:p-16 relative overflow-hidden">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4">
-                Ready to Experience Uzbekistan?
+              <h2 className="text-2xl md:text-3xl font-serif font-bold mb-6">
+                Plan Your Uzbekistan Journey
               </h2>
-              <p className="text-gray-700 mb-6">
-                Our travel experts are ready to help you plan your perfect journey through the 
-                ancient cities and breathtaking landscapes of Uzbekistan. Contact us today!
+              <p className="text-gray-600 mb-8">
+                Let us help you create a peaceful, culturally rich experience in the heart of Central Asia.
+                Our travel experts are ready to craft your perfect journey.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">
@@ -40,12 +36,12 @@ const ContactCta = () => {
             
             <div className="text-center md:text-right">
               <Link to="/contact">
-                <Button className="text-lg px-8 py-6 bg-uznavy hover:bg-uznavy/90 mr-4">
+                <Button className="bg-uznavy hover:bg-uznavy/90 text-white mr-4 mb-4 md:mb-0">
                   Contact Us
                 </Button>
               </Link>
               <Link to="/tours">
-                <Button variant="outline" className="text-lg px-8 py-6 border-2 border-uznavy text-uznavy hover:bg-uzvanilla/30">
+                <Button variant="outline" className="border-uznavy text-uznavy hover:bg-uzvanilla/20">
                   Browse Tours
                 </Button>
               </Link>

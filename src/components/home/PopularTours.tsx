@@ -1,8 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Clock, Calendar, ArrowRight } from 'lucide-react';
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { MapPin, Clock, ArrowRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
 interface Tour {
@@ -47,74 +46,58 @@ const tours: Tour[] = [
     location: "Samarkand",
     featured: true
   },
-  {
-    id: 4,
-    name: "Bukhara Heritage Tour",
-    description: "Visit sacred sites and explore the rich history of beautiful Bukhara.",
-    image: "https://images.unsplash.com/photo-1629212099316-6b2e711f85af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
-    price: 349,
-    duration: "4 days",
-    location: "Bukhara",
-    featured: false
-  }
 ];
 
 const PopularTours = () => {
-  const featuredTours = tours.filter(tour => tour.featured);
-  
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
-            <span className="uz-title-decoration">Popular Tour Packages</span>
+    <section className="py-24 md:py-32 bg-gray-50">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
+            <span className="uz-title-decoration">Experience Uzbekistan</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Experience the best of Uzbekistan with our carefully curated tour packages
-            designed to showcase the country's rich heritage and natural beauty.
+            Curated tours that capture the essence of Uzbekistan's tranquil beauty and rich heritage.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featuredTours.map((tour) => (
-            <Card key={tour.id} className="uz-card group h-full flex flex-col">
-              <div className="relative overflow-hidden h-60">
-                <img
-                  src={tour.image}
-                  alt={tour.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute top-3 right-3 bg-uznavy text-white px-4 py-1 rounded-full font-medium">
-                  From ${tour.price}
+        <div className="grid md:grid-cols-3 gap-12">
+          {tours.map((tour) => (
+            <div key={tour.id} className="group">
+              <Link to={`/tours/${tour.id}`} className="block">
+                <div className="relative overflow-hidden rounded-lg mb-6">
+                  <img
+                    src={tour.image}
+                    alt={tour.name}
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-uznavy px-4 py-1 rounded-full text-sm font-medium">
+                    From ${tour.price}
+                  </div>
                 </div>
-              </div>
-              <CardContent className="pt-6 px-6 flex-grow">
-                <h3 className="text-xl font-serif font-bold mb-2">{tour.name}</h3>
-                <div className="flex items-center text-gray-600 mb-2">
-                  <MapPin size={16} className="mr-2 text-uznavy" />
-                  <span>{tour.location}</span>
+                <div>
+                  <div className="flex items-center justify-between text-sm text-gray-500 mb-2">
+                    <div className="flex items-center">
+                      <MapPin size={16} className="mr-1" />
+                      <span>{tour.location}</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Clock size={16} className="mr-1" />
+                      <span>{tour.duration}</span>
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-serif font-medium mb-3 group-hover:text-uznavy transition-colors">{tour.name}</h3>
+                  <p className="text-gray-600 mb-0 line-clamp-2">{tour.description}</p>
                 </div>
-                <div className="flex items-center text-gray-600 mb-4">
-                  <Clock size={16} className="mr-2 text-uznavy" />
-                  <span>{tour.duration}</span>
-                </div>
-                <p className="text-gray-700 mb-4">{tour.description}</p>
-              </CardContent>
-              <CardFooter className="px-6 pb-6">
-                <Link to={`/tours/${tour.id}`} className="w-full">
-                  <Button className="w-full bg-uznavy hover:bg-uznavy/90">
-                    View Details <ArrowRight size={16} className="ml-2" />
-                  </Button>
-                </Link>
-              </CardFooter>
-            </Card>
+              </Link>
+            </div>
           ))}
         </div>
         
-        <div className="text-center mt-12">
+        <div className="text-center mt-16">
           <Link to="/tours">
-            <Button variant="outline" className="border-2 border-uznavy text-uznavy hover:bg-uzvanilla/30">
-              Browse All Tours <ArrowRight size={18} className="ml-2" />
+            <Button variant="outline" className="border-uznavy text-uznavy hover:bg-uzvanilla/20">
+              View All Tours <ArrowRight size={16} className="ml-2" />
             </Button>
           </Link>
         </div>

@@ -13,15 +13,15 @@ const Index = () => {
     <>
       <Helmet>
         <title>UzTravel - Discover Uzbekistan | O'zbekistonda sayohatlar va tur paketlar</title>
-        <meta name="description" content="Explore the beauty of Uzbekistan with our guided tours to Samarkand, Bukhara, Khiva, and Tashkent. Book your unforgettable journey with UzTravel, the leading travel agency in Tashkent." />
+        <meta name="description" content="Experience the serenity of Uzbekistan with our guided tours to Samarkand, Bukhara, Khiva, and Tashkent. Book your peaceful journey with UzTravel, the leading travel agency in Tashkent." />
         <meta name="keywords" content="tur agentligi O'zbekiston, O'zbekistonda tur paketlar, Toshkent tur agentligi, O'zbekiston sayohatlari, arzon tur paketlar O'zbekiston" />
       </Helmet>
       
       <main>
         <HeroSection />
         <FeaturedDestinations />
-        <PopularTours />
         <AboutPreview />
+        <PopularTours />
         <Testimonials />
         <ContactCta />
       </main>
