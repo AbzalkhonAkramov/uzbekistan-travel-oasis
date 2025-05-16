@@ -5,22 +5,24 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Helmet } from 'react-helmet-async';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const ContactPage = () => {
+  const { t, language } = useLanguage();
+
   return (
     <>
       <Helmet>
-        <title>Contact Us | UzTravel - Toshkent tur agentligi</title>
+        <title>{t('contact.title')} | UzTravel - Toshkent tur agentligi</title>
         <meta name="description" content="Contact UzTravel for inquiries about our tours in Uzbekistan or to book your next adventure. Visit our office in Tashkent or reach us via phone, email, WhatsApp, or Telegram." />
         <meta name="keywords" content="sayohat agentligi Toshkent, Toshkent tur agentligi, turizm xizmatlari Toshkent, O'zbekistonga sayohat qilish" />
       </Helmet>
     
       <div className="pt-24 pb-16 bg-uznavy text-white">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-uzvanilla">Contact Us</h1>
+          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-uzvanilla">{t('contact.title')}</h1>
           <p className="text-lg max-w-3xl">
-            Have questions about our tours or ready to plan your Uzbekistan adventure? 
-            Reach out to our friendly team for assistance.
+            {t('contact.subtitle')}
           </p>
         </div>
       </div>
@@ -31,11 +33,10 @@ const ContactPage = () => {
             {/* Contact Information */}
             <div>
               <h2 className="text-2xl font-serif font-bold mb-6">
-                <span className="uz-title-decoration">Get in Touch</span>
+                <span className="uz-title-decoration">{t('contact.get_in_touch')}</span>
               </h2>
               <p className="text-gray-700 mb-8">
-                Our team is here to help you plan your perfect Uzbekistan adventure. 
-                Feel free to contact us with any questions or to start planning your journey.
+                {t('contact.get_in_touch_description')}
               </p>
 
               <div className="space-y-6">
@@ -44,7 +45,7 @@ const ContactPage = () => {
                     <MapPin size={24} className="text-uznavy" />
                   </div>
                   <div>
-                    <h3 className="font-serif font-bold text-lg">Visit Our Office</h3>
+                    <h3 className="font-serif font-bold text-lg">{t('contact.office')}</h3>
                     <address className="not-italic text-gray-700">
                       123 Amir Temur Street<br />
                       Tashkent, 100000<br />
@@ -58,7 +59,7 @@ const ContactPage = () => {
                     <Phone size={24} className="text-uznavy" />
                   </div>
                   <div>
-                    <h3 className="font-serif font-bold text-lg">Call Us</h3>
+                    <h3 className="font-serif font-bold text-lg">{t('contact.call_us')}</h3>
                     <p className="text-gray-700">
                       <a href="tel:+998123456789" className="hover:text-uznavy transition-colors">
                         +998 12 345 6789
@@ -74,7 +75,7 @@ const ContactPage = () => {
                     <Mail size={24} className="text-uznavy" />
                   </div>
                   <div>
-                    <h3 className="font-serif font-bold text-lg">Email Us</h3>
+                    <h3 className="font-serif font-bold text-lg">{t('contact.email_us')}</h3>
                     <p className="text-gray-700">
                       <a href="mailto:info@uztravel.com" className="hover:text-uznavy transition-colors">
                         info@uztravel.com
@@ -92,7 +93,7 @@ const ContactPage = () => {
                     <MessageCircle size={24} className="text-uznavy" />
                   </div>
                   <div>
-                    <h3 className="font-serif font-bold text-lg">Message Us</h3>
+                    <h3 className="font-serif font-bold text-lg">{t('contact.message_us')}</h3>
                     <p className="text-gray-700">
                       <a href="https://t.me/uztravelbot" target="_blank" rel="noopener noreferrer" className="hover:text-uznavy transition-colors">
                         Telegram: @uztravelbot
@@ -108,7 +109,7 @@ const ContactPage = () => {
 
               {/* Social Media Links */}
               <div className="mt-8">
-                <h3 className="font-serif font-bold text-lg mb-4">Follow Us</h3>
+                <h3 className="font-serif font-bold text-lg mb-4">{t('contact.follow_us')}</h3>
                 <div className="flex space-x-4">
                   <a 
                     href="https://facebook.com" 
@@ -152,24 +153,24 @@ const ContactPage = () => {
             {/* Contact Form */}
             <div>
               <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
-                <h2 className="text-2xl font-serif font-bold mb-6">Send Us a Message</h2>
+                <h2 className="text-2xl font-serif font-bold mb-6">{t('contact.send_message')}</h2>
                 <form>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                        Full Name
+                        {t('contact.full_name')}
                       </label>
                       <Input
                         id="name"
                         type="text"
-                        placeholder="Your full name"
+                        placeholder={language === 'uz' ? "To'liq ismingiz" : language === 'ru' ? "Ваше полное имя" : "Your full name"}
                         className="w-full"
                         required
                       />
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                        Email Address
+                        {t('contact.email')}
                       </label>
                       <Input
                         id="email"
@@ -183,12 +184,12 @@ const ContactPage = () => {
                   
                   <div className="mb-6">
                     <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                      Subject
+                      {t('contact.subject')}
                     </label>
                     <Input
                       id="subject"
                       type="text"
-                      placeholder="How can we help you?"
+                      placeholder={t('contact.subject_placeholder')}
                       className="w-full"
                       required
                     />
@@ -196,18 +197,18 @@ const ContactPage = () => {
                   
                   <div className="mb-6">
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                      Message
+                      {t('contact.message')}
                     </label>
                     <Textarea
                       id="message"
-                      placeholder="Tell us about your travel plans or questions..."
+                      placeholder={t('contact.message_placeholder')}
                       className="w-full h-32"
                       required
                     />
                   </div>
                   
                   <Button type="submit" className="w-full bg-uznavy hover:bg-uznavy/90">
-                    Send Message
+                    {t('contact.send_message')}
                   </Button>
                 </form>
               </div>
@@ -220,7 +221,7 @@ const ContactPage = () => {
       <section className="py-12">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-serif font-bold mb-6 text-center">
-            <span className="uz-title-decoration">Find Us</span>
+            <span className="uz-title-decoration">{t('contact.find_us')}</span>
           </h2>
           <div className="h-[400px] rounded-lg overflow-hidden shadow-lg">
             <iframe

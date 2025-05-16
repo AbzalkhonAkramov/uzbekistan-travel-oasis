@@ -3,21 +3,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const NotFound = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-white px-4">
       <div className="text-center max-w-md">
-        <h1 className="text-6xl font-serif font-bold text-uznavy mb-4">404</h1>
+        <h1 className="text-6xl font-serif font-bold text-uznavy mb-4">{t('notfound.title')}</h1>
         <div className="w-16 h-0.5 bg-uzvanilla mx-auto mb-8"></div>
-        <h2 className="text-2xl font-serif mb-6">Page Not Found</h2>
+        <h2 className="text-2xl font-serif mb-6">{t('notfound.heading')}</h2>
         <p className="text-gray-600 mb-10">
-          The page you are looking for might have been removed, 
-          had its name changed, or is temporarily unavailable.
+          {t('notfound.description')}
         </p>
         <Link to="/">
           <Button className="bg-uznavy hover:bg-uznavy/90 text-white">
-            <ArrowLeft size={16} className="mr-2" /> Back to Homepage
+            <ArrowLeft size={16} className="mr-2" /> {t('notfound.back_home')}
           </Button>
         </Link>
       </div>

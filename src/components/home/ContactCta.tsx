@@ -3,8 +3,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const ContactCta = () => {
+  const { t, language } = useLanguage();
+  
   return (
     <section className="py-24 md:py-32 bg-white">
       <div className="container mx-auto px-6">
@@ -12,11 +15,14 @@ const ContactCta = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold mb-6">
-                Plan Your Uzbekistan Journey
+                {language === 'uz' ? "O'zbekistonga sayohatingizni rejalashtiring" : 
+                 language === 'ru' ? "Спланируйте свое путешествие по Узбекистану" :
+                 "Plan Your Uzbekistan Journey"}
               </h2>
               <p className="text-gray-600 mb-8">
-                Let us help you create a peaceful, culturally rich experience in the heart of Central Asia.
-                Our travel experts are ready to craft your perfect journey.
+                {language === 'uz' ? "Markaziy Osiyoning qalbida tinch, madaniy jihatdan boy tajriba yaratishingizga yordam beramiz. Sayohat mutaxassislarimiz sizning mukammal sayohatingizni tayyorlashga tayyor." : 
+                 language === 'ru' ? "Позвольте нам помочь вам создать спокойный, культурно насыщенный опыт в сердце Центральной Азии. Наши эксперты по путешествиям готовы организовать ваше идеальное путешествие." :
+                 "Let us help you create a peaceful, culturally rich experience in the heart of Central Asia. Our travel experts are ready to craft your perfect journey."}
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">
@@ -37,12 +43,12 @@ const ContactCta = () => {
             <div className="text-center md:text-right">
               <Link to="/contact">
                 <Button className="bg-uznavy hover:bg-uznavy/90 text-white mr-4 mb-4 md:mb-0">
-                  Contact Us
+                  {t('nav.contact')}
                 </Button>
               </Link>
               <Link to="/tours">
                 <Button variant="outline" className="border-uznavy text-uznavy hover:bg-uzvanilla/20">
-                  Browse Tours
+                  {t('nav.tours')}
                 </Button>
               </Link>
             </div>

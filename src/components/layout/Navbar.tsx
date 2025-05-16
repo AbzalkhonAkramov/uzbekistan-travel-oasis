@@ -3,9 +3,12 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import LanguageSwitcher from './LanguageSwitcher';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useLanguage();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -16,11 +19,11 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'Tours', path: '/tours' },
-    { name: 'About', path: '/about' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'Contact', path: '/contact' },
+    { name: t('nav.home'), path: '/' },
+    { name: t('nav.tours'), path: '/tours' },
+    { name: t('nav.about'), path: '/about' },
+    { name: t('nav.blog'), path: '/blog' },
+    { name: t('nav.contact'), path: '/contact' },
   ];
 
   return (
@@ -47,9 +50,12 @@ const Navbar = () => {
           ))}
         </nav>
         
-        <Button variant="default" className="hidden md:flex bg-uznavy hover:bg-uznavy/90">
-          Book Now
-        </Button>
+        <div className="hidden md:flex items-center space-x-4">
+          <LanguageSwitcher />
+          <Button variant="default" className="bg-uznavy hover:bg-uznavy/90">
+            {t('nav.book_now')}
+          </Button>
+        </div>
 
         {/* Mobile menu button */}
         <button
@@ -78,8 +84,11 @@ const Navbar = () => {
                 {item.name}
               </NavLink>
             ))}
-            <Button variant="default" className="mt-4 bg-uznavy hover:bg-uznavy/90 w-full">
-              Book Now
+            <div className="pt-4 pb-2 flex justify-center">
+              <LanguageSwitcher />
+            </div>
+            <Button variant="default" className="mt-2 bg-uznavy hover:bg-uznavy/90 w-full">
+              {t('nav.book_now')}
             </Button>
           </nav>
         </div>
