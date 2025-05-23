@@ -12,7 +12,7 @@ const HeroSection = () => {
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
       <div 
         className="absolute inset-0 bg-cover bg-center z-0" 
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1629212992529-4bcdfb218202?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVuefHx&auto=format&fit=crop&w=1470&q=80')" }}
+        style={{ backgroundImage: "url('/photo-1482938289607-e9573fc25ebb')" }}
       >
         <div className="absolute inset-0 bg-white/30 backdrop-blur-sm"></div>
         <div className="absolute inset-0 opacity-10 uz-pattern-border"></div>

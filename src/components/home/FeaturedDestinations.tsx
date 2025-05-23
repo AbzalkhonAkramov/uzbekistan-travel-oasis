@@ -25,42 +25,42 @@ const destinations: Destination[] = [
     id: 1,
     name: "Registan Square",
     description: "The heart of ancient Samarkand with stunning madrasas and intricate Islamic architecture",
-    image: "https://images.unsplash.com/photo-1553069844-997528c1d566?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    image: "/photo-1466442929976-97f336a657be",
     location: "Samarkand"
   },
   {
     id: 2,
     name: "Itchan Kala",
     description: "Ancient inner town of Khiva with impressive city walls and historic monuments",
-    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    image: "/photo-1472396961693-142e6e269027",
     location: "Khiva"
   },
   {
     id: 3,
     name: "Poi Kalon Complex",
     description: "Historic Islamic complex featuring the magnificent Kalon Minaret and mosque",
-    image: "https://images.unsplash.com/photo-1517037673086-83b5c9d06467?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    image: "/photo-1482938289607-e9573fc25ebb",
     location: "Bukhara"
   },
   {
     id: 4,
     name: "Tashkent Modern City",
     description: "Uzbekistan's capital with a blend of modern architecture and historic sites",
-    image: "https://images.unsplash.com/photo-1569588482493-f442129ce076?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    image: "/photo-1466442929976-97f336a657be",
     location: "Tashkent"
   },
   {
     id: 5,
     name: "Aral Sea Landscape",
     description: "Peaceful desert landscapes and remaining waters of what was once the Aral Sea",
-    image: "https://images.unsplash.com/photo-1508030732173-90dc3469c63c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    image: "/photo-1469041797191-50ace28483c3",
     location: "Karakalpakstan"
   },
   {
     id: 6,
     name: "Chimgan Mountains",
     description: "Serene mountain landscapes offering peaceful views and outdoor recreation",
-    image: "https://images.unsplash.com/photo-1463693396561-31858a322f38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    image: "/photo-1426604966848-d7adac402bff",
     location: "Tashkent Region"
   },
 ];

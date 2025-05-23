@@ -10,7 +10,7 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-white px-4" style={{
-      backgroundImage: "url('https://images.unsplash.com/photo-1466442929976-97f336a657be?auto=format&fit=crop&q=80')",
+      backgroundImage: "url('/photo-1466442929976-97f336a657be')",
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundBlendMode: "overlay",

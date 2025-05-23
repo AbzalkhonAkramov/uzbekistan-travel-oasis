@@ -28,7 +28,7 @@ const AboutPreview = () => {
           <div className="order-1 md:order-2 relative">
             <div className="rounded-lg overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1565457730058-1acc84fc4211?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" 
+                src="/photo-1472396961693-142e6e269027" 
                 alt="Peaceful Uzbek countryside" 
                 className="w-full h-full object-cover"
               />
